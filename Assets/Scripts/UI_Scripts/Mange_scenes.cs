@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Mange_scenes : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public string sceneName;
-    public void Change_Scenes(string sceneName)
+    public string SceneName;
+    //前往SceneName
+    public void Change_Scenes(string SceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneName);
     }
+    //離開遊戲
     public void Exit_game()
     {
         Application.Quit();

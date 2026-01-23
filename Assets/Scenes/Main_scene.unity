@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 71680568}
   - component: {fileID: 71680570}
   - component: {fileID: 71680569}
+  - component: {fileID: 71680571}
   m_Layer: 6
   m_Name: Rank_text
   m_TagString: Untagged
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '   1. '
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -255,6 +256,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71680567}
   m_CullTransparentMesh: 1
+--- !u!114 &71680571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71680567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d73a2c1d510f5449b40650a78fb74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Load_Rank
 --- !u!1 &92870885
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07d961aeeaa1ef42a4a1fce69d2824f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mange_scenes
-  sceneName: 
+  SceneName: 
 --- !u!1 &116980173
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +562,7 @@ GameObject:
   - component: {fileID: 601329031}
   - component: {fileID: 601329033}
   - component: {fileID: 601329032}
+  - component: {fileID: 601329034}
   m_Layer: 5
   m_Name: BackGround
   m_TagString: Untagged
@@ -618,65 +632,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601329030}
   m_CullTransparentMesh: 1
---- !u!1 &713589390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 713589393}
-  - component: {fileID: 713589392}
-  - component: {fileID: 713589391}
-  m_Layer: 0
-  m_Name: Testread
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &713589391
+--- !u!114 &601329034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713589390}
+  m_GameObject: {fileID: 601329030}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b991ae81c593bdb428599b1e341af14b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e33182c1131cad499ed21c851510f23, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Read_data
---- !u!114 &713589392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713589390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f18910c8a64e15a43b8d38c31e6855b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Save_date
+  m_EditorClassIdentifier: Assembly-CSharp::Write_data
   data:
     datas: []
---- !u!4 &713589393
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713589390}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1293.9537, y: 454.06076, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813215100
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07d961aeeaa1ef42a4a1fce69d2824f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mange_scenes
-  sceneName: 
+  SceneName: 
 --- !u!1 &1207776230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,7 +1741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07d961aeeaa1ef42a4a1fce69d2824f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mange_scenes
-  sceneName: 
+  SceneName: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1780,4 +1749,3 @@ SceneRoots:
   - {fileID: 813215103}
   - {fileID: 1313710306}
   - {fileID: 1207776233}
-  - {fileID: 713589393}
