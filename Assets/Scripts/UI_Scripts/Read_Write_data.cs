@@ -3,17 +3,17 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
+using Unity.Collections;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 public class Read_Write_data : MonoBehaviour
 {
 
-    private string path = @"D:\VS new clone\115_STG_showcase\Assets\Saved\saved.json";
-    public Saved_data data;
-    //start為測試用途，可刪
+    //測試用途，後刪
     void Start()
     {
+        Saved_data data=read_json();
         for (int i = 0; i < 10; i++)
         {
             ScoreEntry score=new ScoreEntry();
@@ -27,7 +27,7 @@ public class Read_Write_data : MonoBehaviour
     //將data寫成json存入path
     public void write_json(Saved_data data)
     {
-        Debug.Log(path);
+        string path = Path.Combine(Application.persistentDataPath, "saved.json");
         string json=JsonUtility.ToJson(data,true);
         try
         {
@@ -44,9 +44,11 @@ public class Read_Write_data : MonoBehaviour
     //將path中的json轉成Saved_data回傳
     public Saved_data read_json()
     {
+        string path = Path.Combine(Application.persistentDataPath, "saved.json");
         string json = File.ReadAllText(path);
         try
         {
+            Saved_data data=JsonUtility.FromJson<Saved_data>(json);
             Debug.Log("read complete");
             return data;
         }
