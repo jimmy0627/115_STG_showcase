@@ -1,29 +1,40 @@
+using System;
 using UnityEngine;
 
 public class Ship_class :MonoBehaviour
 {
     [SerializeField]
-    protected int HP;
+    public int HP; //血量
     [SerializeField]
-    protected int damageIndex;
+    public int ATK; //攻擊力
     [SerializeField]
-    protected int gunAmmount;
+    public int gunAmmount; //彈幕數量
     [SerializeField]
-    protected int speed;
+    public int weaponCD; //攻擊冷卻
     [SerializeField]
-    protected int shipType;
+    public int shipSpeed; //移動速度
     [SerializeField]
-    protected int IFF;
-    public void repairShip(int ammount)
+    public int bulletSpeed; //子彈速度
+    [SerializeField]
+    public int shipType; //艦船類型
+    [SerializeField]
+    public int IFF; //敵我標示(我為0,敵為1)
+    [SerializeField] 
+    public GameObject bullet; //子彈的object
+    public void RpairShip(int ammount) //回血
     {
         HP+=ammount;
     }
-    public void addDamage(int ammount)
+    public void IncreaseDamage(int ammount) //加攻擊力
     {
-        damageIndex+=ammount;
+        ATK+=ammount;
     }
-    public void AddGun()
+    public void AddGun() //加彈幕
     {
         gunAmmount+=1;
+    }
+    public void Hit(int ammount) //受傷
+    {
+        HP-=ammount;
     }
 }

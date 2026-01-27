@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class Player_move : Ship_class
+public class Player_base : MonoBehaviour
 {
     public InputAction movement;
     private Rigidbody2D rb;
+    private Ship_class state;
     int velocty;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        state=GetComponent<Ship_class>();
         movement.Enable();//記得開機，不然movement沒有作用
-        velocty=speed;
+        velocty=state.shipSpeed;
     }
     void Update()
     {
@@ -17,7 +19,6 @@ public class Player_move : Ship_class
         Vector2 inputvalue=movement.ReadValue<Vector2>(); 
         float inputx=inputvalue.x;
         float inputy=inputvalue.y;
-        //以下可以使用movebygetaxis中的三種方法任一實現，這裡用linearVelocity演示
         Vector2 dir=new Vector2(inputx*velocty,inputy*velocty);
         rb.linearVelocity=dir;
     }
