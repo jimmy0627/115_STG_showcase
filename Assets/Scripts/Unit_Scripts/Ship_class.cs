@@ -6,6 +6,8 @@ public class Ship_class :MonoBehaviour
     [SerializeField]
     public int HP; //血量
     [SerializeField]
+    public int NowHP;//現在的血量
+    [SerializeField]
     public int ATK; //攻擊力
     [SerializeField]
     public int gunAmmount; //彈幕數量
