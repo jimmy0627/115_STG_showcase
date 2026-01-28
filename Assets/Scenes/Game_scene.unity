@@ -529,8 +529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8eea29ad8787648a406ee8b8654277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
+  MaxHP: 100
   HP: 100
-  NowHP: 100
   ATK: 1
   gunAmmount: 1
   weaponCD: 1
@@ -727,7 +727,7 @@ GameObject:
   - component: {fileID: 1881628502}
   - component: {fileID: 1881628504}
   - component: {fileID: 1881628503}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,11 +773,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 1194289388126502306, guid: 08d68981a572145d28b07d1ff3d8897b, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 2030129464}
   - component: {fileID: 2030129463}
   - component: {fileID: 2030129466}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -909,8 +909,8 @@ MonoBehaviour:
   StartColor: {r: 0, g: 1, b: 0, a: 1}
   EndColor: {r: 1, g: 0, b: 0, a: 1}
   HPImage: {fileID: 1881628503}
+  MaxHP: 0
   HP: 10
-  NowHP: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

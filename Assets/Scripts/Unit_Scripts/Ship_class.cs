@@ -4,9 +4,9 @@ using UnityEngine;
 public class Ship_class :MonoBehaviour
 {
     [SerializeField]
-    public int HP; //血量
+    public int MaxHP;       //最大血量（只會用在HPbar運算
     [SerializeField]
-    public int NowHP;//現在的血量
+    public int HP;      //現在的血量也就是傷害運算用這個
     [SerializeField]
     public int ATK; //攻擊力
     [SerializeField]
@@ -25,7 +25,7 @@ public class Ship_class :MonoBehaviour
     public GameObject bullet; //子彈的object
     public void RpairShip(int ammount) //回血
     {
-        HP+=ammount;
+        HP += ammount;
     }
     public void IncreaseDamage(int ammount) //加攻擊力
     {
