@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class Player_base : MonoBehaviour
+public class Player_move : MonoBehaviour
 {
     public InputAction movement;
     private Rigidbody2D rb;
@@ -13,7 +13,7 @@ public class Player_base : MonoBehaviour
         movement.Enable();//記得開機，不然movement沒有作用
         velocty=state.shipSpeed;
     }
-    void Update()
+    void FixedUpdate()
     {
         //從movement裡讀取輸入數值，並依照方向分類
         Vector2 inputvalue=movement.ReadValue<Vector2>(); 

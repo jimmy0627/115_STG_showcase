@@ -8,13 +8,16 @@ public class Shooting : MonoBehaviour
     private GameObject bullet;
     void Start()
     {
-        state=GetComponent<Ship_class>();
+        state=transform.parent.GetComponent<Ship_class>();
         StartCoroutine(attackRoutine()); //開始攻擊循環
     }
     void Fire()
     {
         bullet=state.bullet;
-        Instantiate(bullet,transform.position,Quaternion.identity,transform); //生成在當前位置的當前船隻下
+        GameObject clone=Instantiate(bullet,transform.position,Quaternion.identity); //生成在當前位置的當前船隻下
+        clone.GetComponent<Bullet>().damage=state.ATK;
+        clone.GetComponent<Bullet>().bulletSpeed=state.bulletSpeed;
+        clone.GetComponent<Bullet>().myIFF=state.IFF;
     }
 
     IEnumerator attackRoutine()

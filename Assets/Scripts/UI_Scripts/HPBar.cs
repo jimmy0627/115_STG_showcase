@@ -7,11 +7,11 @@ public class UnitHpBar : MonoBehaviour
     [SerializeField] private Color EndColor = Color.red;
     [SerializeField] private Image HPImage;
     public float HP;
-    public float NowHP;
+    public float nowHP;
     void Start()
     {
         HP = transform.parent.GetComponent<Ship_class>().HP;
-        NowHP = transform.parent.GetComponent<Ship_class>().NowHP;
+        nowHP = transform.parent.GetComponent<Ship_class>().nowHP;
     }
 
     public void SetHPBar(float HP, float NowHP)
@@ -23,11 +23,11 @@ public class UnitHpBar : MonoBehaviour
         HPImage.color = Color.Lerp(EndColor, StartColor, ratio);
     }
     void Update()
-{
-    if (transform.parent == null) return;
-    Ship_class ship = transform.parent.GetComponent<Ship_class>();
-    if (ship == null) return;
+    {
+        if (transform.parent == null) return;
+        Ship_class ship = transform.parent.GetComponent<Ship_class>();
+        if (ship == null) return;
 
-    SetHPBar(ship.HP, ship.NowHP);
-}
+        SetHPBar(ship.HP, ship.nowHP);
+    }
 }

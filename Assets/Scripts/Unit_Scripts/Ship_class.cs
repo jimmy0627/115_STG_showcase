@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Ship_class :MonoBehaviour
@@ -6,7 +7,7 @@ public class Ship_class :MonoBehaviour
     [SerializeField]
     public int HP; //血量
     [SerializeField]
-    public int NowHP;//現在的血量
+    public int nowHP; //現在的血量
     [SerializeField]
     public int ATK; //攻擊力
     [SerializeField]
@@ -23,9 +24,9 @@ public class Ship_class :MonoBehaviour
     public int IFF; //敵我標示(我為0,敵為1)
     [SerializeField] 
     public GameObject bullet; //子彈的object
-    public void RpairShip(int ammount) //回血
+    public void RepairShip(int ammount) //回血
     {
-        HP+=ammount;
+        nowHP=math.min(HP,nowHP+ammount);
     }
     public void IncreaseDamage(int ammount) //加攻擊力
     {
@@ -37,6 +38,14 @@ public class Ship_class :MonoBehaviour
     }
     public void Hit(int ammount) //受傷
     {
-        HP-=ammount;
+        nowHP-=ammount;
+        if (nowHP <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void IncreaseAttackspeed(int ammount)
+    {
+        weaponCD+=ammount;
     }
 }
