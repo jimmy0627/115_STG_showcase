@@ -9,21 +9,6 @@ using Debug = UnityEngine.Debug;
 using Random = UnityEngine.Random;
 public class Read_Write_data : MonoBehaviour
 {
-
-    //測試用途，後刪
-    void Start()
-    {
-        Saved_data data=read_json();
-        for (int i = 0; i < 10; i++)
-        {
-            ScoreEntry score=new ScoreEntry();
-            score.playername="jimmy";
-            score.score=Random.Range(0,1000);
-            data.datas.Add(score);
-            score=null;
-        }
-        write_json(data);
-    }
     //將data寫成json存入path
     public void write_json(Saved_data data)
     {

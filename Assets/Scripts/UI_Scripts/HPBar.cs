@@ -23,10 +23,10 @@ public class UnitHpBar : MonoBehaviour
         HPImage.color = Color.Lerp(EndColor, StartColor, ratio);    // EndColor+(StartColor-EndColor)*ratio
     }
     void Update()
-{
-    if (transform.parent == null) return;
-    Ship_class ship = transform.parent.GetComponent<Ship_class>();
-    if (ship == null) return;
+    {
+        if (transform.parent == null) return;
+        Ship_class ship = transform.parent.GetComponent<Ship_class>();
+        if (ship == null) return;
 
     SetHPBar(ship.MaxHP, ship.HP);      //隨時更新血量
 }
