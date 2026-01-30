@@ -13,7 +13,7 @@ public class Player_move : MonoBehaviour
         movement.Enable();//記得開機，不然movement沒有作用
         velocty=state.shipSpeed;
     }
-    void FixedUpdate()
+    void Update()
     {
         //從movement裡讀取輸入數值，並依照方向分類
         Vector2 inputvalue=movement.ReadValue<Vector2>(); 
@@ -21,6 +21,11 @@ public class Player_move : MonoBehaviour
         float inputy=inputvalue.y;
         Vector2 dir=new Vector2(inputx*velocty,inputy*velocty);
         rb.linearVelocity=dir;
+    }
+
+    void LateUpdate()
+    {
+        transform.rotation=Quaternion.identity;
     }
 
 }

@@ -8,7 +8,7 @@ public class Shooting : MonoBehaviour
     private GameObject bullet;
     void Start()
     {
-        state=transform.parent.GetComponent<Ship_class>();
+        state=transform.parent.parent.GetComponent<Ship_class>();
         StartCoroutine(attackRoutine()); //開始攻擊循環
     }
     void Fire()

@@ -27,7 +27,7 @@ public class Ship_class :MonoBehaviour
     public void RepairShip(int ammount) //回血
     {
         HP += ammount;
-        nowHP=math.min(HP,nowHP+ammount);
+        HP=math.min(MaxHP,HP+ammount);
     }
     public void IncreaseDamage(int ammount) //加攻擊力
     {
@@ -39,8 +39,8 @@ public class Ship_class :MonoBehaviour
     }
     public void Hit(int ammount) //受傷
     {
-        nowHP-=ammount;
-        if (nowHP <= 0)
+        HP-=ammount;
+        if (HP <= 0)
         {
             Destroy(gameObject);
         }
