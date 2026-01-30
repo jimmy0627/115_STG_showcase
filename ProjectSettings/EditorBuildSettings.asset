@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_scene.unity
     guid: 38390fa48e226ff469ef5325a206b425
   - enabled: 1
-    path: Assets/Scenes/Settlement_Scene.unity
+    path: Assets/Scenes/Settlement_scene.unity
     guid: 2927ae975cf863540a7331051fb59b81
   - enabled: 1
     path: Assets/Scenes/Tutorial_scene.unity
