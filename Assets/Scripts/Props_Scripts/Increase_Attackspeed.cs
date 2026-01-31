@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Increase_Attackspeed : MonoBehaviour
 {
-    [SerializeField] private int incraseAmmount;
+    [SerializeField] private int incraseAmount;
     private Rigidbody2D rb;
 
     void Awake()
@@ -21,7 +21,7 @@ public class Increase_Attackspeed : MonoBehaviour
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
             if (state.IFF==0)
             {
-                state.IncreaseAttackspeed(incraseAmmount);
+                state.IncreaseAttackspeed(incraseAmount);
                 Destroy(gameObject);
             }
         }

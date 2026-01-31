@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Health_Pack : MonoBehaviour
 {
-    [SerializeField] private int recoverAmmount;
+    [SerializeField] private int recoverAmount;
     private Rigidbody2D rb;
 
     void Awake()
@@ -24,7 +24,7 @@ public class Health_Pack : MonoBehaviour
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
             if (state.IFF==0)
             {
-                state.RepairShip(recoverAmmount);
+                state.RepairShip(recoverAmount);
                 Destroy(gameObject);
             }
         }
