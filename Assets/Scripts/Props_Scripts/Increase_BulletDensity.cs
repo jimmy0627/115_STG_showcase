@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class Incrase_ATK : MonoBehaviour
+public class Increase_BulletDensity : MonoBehaviour
 {
-    [SerializeField] private int incraseAmount;
+    [SerializeField] private int PTPincraseAmount = 2;//
+    [SerializeField] private int PPincraseAmount = 1;//
     private Rigidbody2D rb;
 
     void Awake()
     {
-        rb=GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +22,14 @@ public class Incrase_ATK : MonoBehaviour
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
             if (state.IFF==0)
             {
-                state.IncreaseDamage(incraseAmount);
+                if (Ship_class.gunAmount<7)
+                {
+                    state.AddGunPair(PTPincraseAmount);
+                }
+                else
+                {
+                    state.AddFunnel(PPincraseAmount);
+                }
                 Destroy(gameObject);
             }
         }
