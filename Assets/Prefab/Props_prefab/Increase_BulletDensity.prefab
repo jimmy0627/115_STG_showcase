@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5373927444051074980}
   m_Layer: 0
   m_Name: Increase_BulletDensity
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -168,5 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d3f5118c6de64e06ad4cf22df5e4bf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Increase_BulletDensity
-  gunAmount: 0
-  funnelAmount: 0
+  PTPincraseAmount: 2
+  PPincraseAmount: 1

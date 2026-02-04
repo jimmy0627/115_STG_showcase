@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7535c97bf4e95843af7a82619629ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Incrase_ATK
-  incraseAmmount: 0
+  incraseAmount: 10

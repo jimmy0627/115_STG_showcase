@@ -11,7 +11,7 @@ public class Drop_items : MonoBehaviour
         public GameObject itemPrefab;
         [Range(1, 100)] public int weight; // 權重 (數值越高越容易掉)
     }
-    public float dropChance = 50f; //全局掉落率
+    public float dropChance ; //全局掉落率
 
     [SerializeField]
     private List<LootItem> lootTable = new List<LootItem>();

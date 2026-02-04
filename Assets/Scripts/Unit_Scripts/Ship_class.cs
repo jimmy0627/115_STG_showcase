@@ -12,12 +12,13 @@ public class Ship_class : MonoBehaviour
     public int HP;      //現在的血量也就是傷害運算用這個
     [SerializeField]
     public int ATK; //攻擊力
-    static public int gunAmount = 1; //彈幕數量
-    public int funnelAmount= 0; //浮游砲數量
     [SerializeField]
-    public float radius = 5f;//浮游砲的半徑
+    public int gunAmount=1; //彈幕數量
+    public int funnelAmount; //浮游砲數量
     [SerializeField]
-    public int weaponCD; //攻擊冷卻
+    public float radius;//浮游砲的半徑
+    [SerializeField]
+    public float weaponCD; //攻擊冷卻
     [SerializeField]
     public int shipSpeed; //移動速度
     [SerializeField]
@@ -53,35 +54,37 @@ public class Ship_class : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject f = Instantiate(funnelPrefab, funnelRoot);
-            //Instantiate這函數能管旋轉角度，我沒寫它，等於就是直接用物體本身的角度了
-            //沒研究過Instantiate，到時候套上圖片如果要用角度再說
+            GameObject f = Instantiate(funnelPrefab,transform.position+new Vector3(0,1.25f,0),quaternion.identity,funnelRoot);
             funnels.Add(f.transform);
             funnelAmount++;
         }
-
-        UpdateFunnel();//計算角度以及位置，然後把砲的相對位置算出來
+        UpdateFunnel();
     }
     public void Hit(int amount) //受傷
     {
         HP -= amount;
         if (HP <= 0)
         {
+            if (IFF==1)
+            {
+                GetComponent<Drop_items>().DropLoot();
+            }
             Destroy(gameObject);
         }
     }
-    public void IncreaseAttackspeed(int amount)
+    public void IncreaseAttackspeed(int amount) //減少CD
     {
-        weaponCD += amount;
+        float factor=1-(amount/100f);
+        weaponCD*=factor;        
     }
-    public void UpdateGunActive()//
+    public void UpdateGunActive() //啟用gunAmount數量的機槍
     {
-        for (int i = 0; i < Pylons.Count; i++)
+        for (int i = 1; i < Pylons.Count; i++)
         {
             Pylons[i].SetActive(i < gunAmount);
         }
     }
-    public void UpdateFunnel()
+    public void UpdateFunnel() //更新浮游泡位置
     {
         int count = funnels.Count;
 

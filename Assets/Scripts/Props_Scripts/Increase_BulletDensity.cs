@@ -13,16 +13,13 @@ public class Increase_BulletDensity : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.GetComponent<Bullet>())
-        {
-            return;
-        }
+        if (collision.CompareTag("item") && collision.CompareTag("Bullet")) return;
         try
         {
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
             if (state.IFF==0)
             {
-                if (Ship_class.gunAmount<7)
+                if (state.gunAmount < 7)
                 {
                     state.AddGunPair(PTPincraseAmount);
                 }

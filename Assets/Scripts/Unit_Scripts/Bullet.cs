@@ -20,12 +20,13 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        rb.linearVelocityY=Math.Abs(bulletSpeed); //恆定向上
+        int factor= (int)Math.Pow(-1,myIFF);
+        rb.linearVelocityY=Math.Abs(bulletSpeed)*factor; //若是我方船則向上，敵方向下
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("item")) return; //若碰撞到的是物品則跳過
-        try //若敵方為船
+        if (collision.CompareTag("item") || collision.CompareTag("Bullet")) return; //若碰撞到的是物品則跳過
+        try
         {
             enmeyShip=collision.transform.GetComponent<Ship_class>();
             if (enmeyShip.IFF!=myIFF) //若非我方船艦，造成傷害後刪除
@@ -34,7 +35,7 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        catch (System.NullReferenceException) //出bug或不是船艦(可能是敵方子彈或者牆壁)
+        catch (System.NullReferenceException) //出bug或不是船艦
         {
             Destroy(gameObject);
         }
@@ -43,5 +44,10 @@ public class Bullet : MonoBehaviour
             Debug.Log(e);
             Destroy(gameObject);
         }
+    }
+    public void Self_Destruct()
+    {
+        transform.GetComponent<SpriteRenderer>().enabled=false; //關閉渲染，避免顯示bug
+        Destroy(gameObject);
     }
 }
