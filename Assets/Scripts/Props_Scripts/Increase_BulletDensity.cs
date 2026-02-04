@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Increase_BulletDensity : MonoBehaviour
 {
-    [SerializeField] private int PTPincraseAmount = 2;//
-    [SerializeField] private int PPincraseAmount = 1;//
+    [SerializeField] private int PTPB = 2;//PerTimePerBallistics每次增加的彈道
+    [SerializeField] private int PTPF = 1;//PerTimePerFunnel
     private Rigidbody2D rb;
 
     void Awake()
@@ -13,19 +13,23 @@ public class Increase_BulletDensity : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("item") && collision.CompareTag("Bullet")) return;
+        if (collision.transform.GetComponent<Bullet>())
+        {
+            return;
+        }
         try
         {
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
             if (state.IFF==0)
             {
-                if (state.gunAmount < 7)
+                if (state.gunAmount<7)
                 {
-                    state.AddGunPair(PTPincraseAmount);
+                    state.AddGunPair(PTPB);
                 }
                 else
                 {
-                    state.AddFunnel(PPincraseAmount);
+                    state.GetComponent<PlayAreaClamp>().enabled = true;
+                    state.AddFunnel(PTPF);
                 }
                 Destroy(gameObject);
             }

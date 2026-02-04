@@ -12,13 +12,12 @@ public class Ship_class : MonoBehaviour
     public int HP;      //現在的血量也就是傷害運算用這個
     [SerializeField]
     public int ATK; //攻擊力
+    public int gunAmount = 1; //彈幕數量
+    public int funnelAmount= 0; //浮游砲數量
     [SerializeField]
-    public int gunAmount=1; //彈幕數量
-    public int funnelAmount; //浮游砲數量
+    public float radius = 5f;//浮游砲的半徑
     [SerializeField]
-    public float radius;//浮游砲的半徑
-    [SerializeField]
-    public float weaponCD; //攻擊冷卻
+    public int weaponCD; //攻擊冷卻
     [SerializeField]
     public int shipSpeed; //移動速度
     [SerializeField]
@@ -29,6 +28,7 @@ public class Ship_class : MonoBehaviour
     public int IFF; //敵我標示(我為0,敵為1)
     [SerializeField]
     public GameObject bullet; //子彈的object
+    [SerializeField] PlayAreaClamp playAreaClamp;
     [SerializeField] List<GameObject> Pylons = new List<GameObject>();//機槍的list
     [SerializeField] Transform funnelRoot;//浮游砲要放的父物件
     [SerializeField] GameObject funnelPrefab;//浮游砲的prefab
@@ -54,52 +54,51 @@ public class Ship_class : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            GameObject f = Instantiate(funnelPrefab,transform.position+new Vector3(0,1.25f,0),quaternion.identity,funnelRoot);
+            GameObject f = Instantiate(funnelPrefab, funnelRoot);
+            //Instantiate這函數能管旋轉角度，我沒寫它，等於就是直接用物體本身的角度了
+            //沒研究過Instantiate，到時候套上圖片如果要用角度再說
             funnels.Add(f.transform);
             funnelAmount++;
         }
-        UpdateFunnel();
+
+        UpdateFunnel();//計算角度以及位置，然後把砲的相對位置算出來
     }
     public void Hit(int amount) //受傷
     {
         HP -= amount;
         if (HP <= 0)
         {
-            if (IFF==1)
-            {
-                GetComponent<Drop_items>().DropLoot();
-            }
             Destroy(gameObject);
         }
     }
-    public void IncreaseAttackspeed(int amount) //減少CD
+    public void IncreaseAttackspeed(int amount)
     {
-        float factor=1-(amount/100f);
-        weaponCD*=factor;        
+        weaponCD += amount;
     }
-    public void UpdateGunActive() //啟用gunAmount數量的機槍
+    public void UpdateGunActive()//
     {
-        for (int i = 1; i < Pylons.Count; i++)
+        for (int i = 0; i < Pylons.Count; i++)
         {
             Pylons[i].SetActive(i < gunAmount);
         }
     }
-    public void UpdateFunnel() //更新浮游泡位置
+    public void UpdateFunnel()
     {
         int count = funnels.Count;
-
-        for (int i = 0; i < count; i++)
+        //用極座標的方式算出一個浮游砲應該要在哪個位置
+        //因為我們是設定等角速度，所以只要每次生成檢查一次浮游砲們的相對位置就行
+        for (int i = 0; i < count; i++)//分別算每個浮游的for迴圈
         {
-            float angle = i * 360f / count;
-            float rad = angle * Mathf.Deg2Rad;
+            float angle = i * 360f / count;     //算極座標的角度 1個就是360，2個180\360，三個120\240\360
+            float rad = angle * Mathf.Deg2Rad;//角度轉徑渡
 
             Vector3 localPos = new Vector3(
                 Mathf.Cos(rad),
                 Mathf.Sin(rad),
                 0
-            ) * radius;
+            ) * radius;//極座標表示位置，x是cos，y是sin，然後z是0
 
-            funnels[i].localPosition = localPos;
+            funnels[i].localPosition = localPos;//把各個浮游砲給位置
         }
     }
 }
