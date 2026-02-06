@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,7 +19,7 @@ public class Ship_class : MonoBehaviour
     [SerializeField]
     public float radius = 5f;//浮游砲的半徑
     [SerializeField]
-    public int weaponCD; //攻擊冷卻
+    public float weaponCD; //攻擊冷卻
     [SerializeField]
     public int shipSpeed; //移動速度
     [SerializeField]
@@ -28,11 +30,13 @@ public class Ship_class : MonoBehaviour
     public int IFF; //敵我標示(我為0,敵為1)
     [SerializeField]
     public GameObject bullet; //子彈的object
+    [SerializeField] private GameObject ScoreBorad; //分數板
+
     [SerializeField] PlayAreaClamp playAreaClamp;
     [SerializeField] List<GameObject> Pylons = new List<GameObject>();//機槍的list
     [SerializeField] Transform funnelRoot;//浮游砲要放的父物件
     [SerializeField] GameObject funnelPrefab;//浮游砲的prefab
-
+    int[] Scores=new int[]{0,100,500,1000}; //擊毀艦船的分數，依照ShipType排序
 
     List<Transform> funnels = new List<Transform>();//浮游砲的list
 
@@ -69,11 +73,13 @@ public class Ship_class : MonoBehaviour
         if (HP <= 0)
         {
             Destroy(gameObject);
+            AddScore(shipType,ScoreBorad);
         }
     }
-    public void IncreaseAttackspeed(int amount)
+    public void IncreaseAttackspeed(float amount)
     {
-        weaponCD += amount;
+        float temp=weaponCD;
+        weaponCD -= temp*(amount/100);
     }
     public void UpdateGunActive()//
     {
@@ -99,6 +105,21 @@ public class Ship_class : MonoBehaviour
             ) * radius;//極座標表示位置，x是cos，y是sin，然後z是0
 
             funnels[i].localPosition = localPos;//把各個浮游砲給位置
+        }
+    }
+    private void AddScore(int shipType , GameObject ScoreBoard) //增加分數
+    {
+
+        TextMeshProUGUI borad = ScoreBoard.GetComponent<TextMeshProUGUI>();
+        int origin=int.Parse(borad.text);
+        if (Scores[shipType] != -1)
+        {
+            origin+=Scores[shipType];
+            borad.text=origin.ToString();
+        }
+        else
+        {
+            GetComponent<Mange_scenes>().Change_Scenes("Settlement_scene");
         }
     }
 }

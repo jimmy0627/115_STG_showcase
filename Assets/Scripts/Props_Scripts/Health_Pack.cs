@@ -15,7 +15,7 @@ public class Health_Pack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("item") && collision.CompareTag("Bullet")) return;
+        if (collision.CompareTag("item") || collision.CompareTag("Bullet")) return;
         
         try
         {

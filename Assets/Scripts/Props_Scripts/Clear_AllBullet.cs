@@ -15,7 +15,7 @@ public class Clear_AllBullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("item") && collision.CompareTag("Bullet")) return;
+        if (collision.CompareTag("item") || collision.CompareTag("Bullet")) return;
         try
         {
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
