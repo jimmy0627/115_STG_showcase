@@ -8,7 +8,7 @@ public class Load_Rank : MonoBehaviour
 
     void Start()
     {
-        Read_Write_data tool=transform.parent.parent.GetComponent<Read_Write_data>(); //存讀檔工具
+        Read_Write_data tool=new Read_Write_data();
         TextMeshProUGUI Rank_borad=transform.GetComponent<TextMeshProUGUI>(); //排行榜的文字
         Saved_data data=tool.read_json(); //讀取出來的存檔
 

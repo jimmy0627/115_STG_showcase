@@ -5,6 +5,7 @@ using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ship_class : MonoBehaviour
 {
@@ -70,10 +71,19 @@ public class Ship_class : MonoBehaviour
     public void Hit(int amount) //受傷
     {
         HP -= amount;
-        if (HP <= 0)
+        if (HP <= 0 && IFF !=0)
         {
+            //敵人死亡時，加分數並刪除單位
             Destroy(gameObject);
-            AddScore(shipType,ScoreBorad);
+            AddScore(shipType,ScoreBorad); 
+        }
+        else if(HP <= 0 && IFF ==0)
+        {
+            //我方死亡時，暫存分數、重製分數板、進入結算場景
+            Destroy(gameObject);
+            Temp_Store.Session_Score=int.Parse(ScoreBorad.GetComponent<TextMeshProUGUI>().text);
+            ScoreBorad.GetComponent<TextMeshProUGUI>().text=0.ToString();
+            SceneManager.LoadScene("Settlement_scene");
         }
     }
     public void IncreaseAttackspeed(float amount)
@@ -112,7 +122,7 @@ public class Ship_class : MonoBehaviour
 
         TextMeshProUGUI borad = ScoreBoard.GetComponent<TextMeshProUGUI>();
         int origin=int.Parse(borad.text);
-        if (Scores[shipType] != -1)
+        if (Scores[shipType] != 0)
         {
             origin+=Scores[shipType];
             borad.text=origin.ToString();
