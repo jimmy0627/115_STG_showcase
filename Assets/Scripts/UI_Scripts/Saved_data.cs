@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class Saved_data
 {
-    public List<ScoreEntry> datas; //存檔單元串
+    public List<ScoreEntry> datas = new List<ScoreEntry>(); //存檔單元串
 }
 
 [Serializable]

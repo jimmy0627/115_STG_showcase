@@ -12,7 +12,7 @@ public class Enemy_move : MonoBehaviour
         public bool Randomove; //是否開啟亂動
     }
     public List<Waypoint> Waypoints=new List<Waypoint>();
-    public Vector2[] vectors=new Vector2[]{Vector2.up,Vector2.down,Vector2.left,Vector2.right};
+    Vector2[] vectors=new Vector2[]{Vector2.up,Vector2.down,Vector2.left,Vector2.right};
     Ship_class state;
     public float RandomMoveRange; //亂動的範圍
     public float RandomMoveFreq; //亂動的頻率
