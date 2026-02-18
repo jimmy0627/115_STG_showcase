@@ -11,13 +11,10 @@ public class Load_Rank : MonoBehaviour
         Read_Write_data tool=new Read_Write_data();
         TextMeshProUGUI Rank_borad=transform.GetComponent<TextMeshProUGUI>(); //排行榜的文字
         Saved_data data=tool.read_json(); //讀取出來的存檔
-
         List<ScoreEntry> ranklist=new List<ScoreEntry>();
         ranklist=GetTop5HighScores(data);
-
         for (int i = 0; i <ranklist.Count; i++)
         {
-            Debug.Log(ranklist[i].playername+" "+ranklist[i].score);
             Rank_borad.text+=(i+1)+".  "+ranklist[i].playername+" : "+ranklist[i].score+"\n";
         }
     }
@@ -25,7 +22,7 @@ public class Load_Rank : MonoBehaviour
 
     public List<ScoreEntry> GetTop5HighScores(Saved_data savedData)
     {
-        Debug.Log(savedData.datas.Count);
+        //Debug.Log(savedData.datas.Count);
         //安全檢查：確保資料不是 null
         if (savedData == null || savedData.datas.Count == 0)
         {

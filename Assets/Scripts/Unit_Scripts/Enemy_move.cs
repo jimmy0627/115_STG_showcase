@@ -12,6 +12,7 @@ public class Enemy_move : MonoBehaviour
         public bool Randomove; //是否開啟亂動
     }
     public List<Waypoint> Waypoints=new List<Waypoint>();
+    public bool Loop; // 是否開啟循環
     Vector2[] vectors=new Vector2[]{Vector2.up,Vector2.down,Vector2.left,Vector2.right};
     Ship_class state;
     public float RandomMoveRange; //亂動的範圍
@@ -26,32 +27,29 @@ public class Enemy_move : MonoBehaviour
     }
     IEnumerator FlyFollowWayPoints()
     {
-        foreach (var item in Waypoints)
+        do
         {
-            while ((Vector2)transform.position != item.pos)
+            foreach (var item in Waypoints)
             {
-                //前往下一個目標點
-                transform.position=Vector2.MoveTowards(transform.position,item.pos,state.shipSpeed*Time.deltaTime);
-                yield return null;
+                while ((Vector2)transform.position != item.pos)
+                {
+                    //前往下一個目標點
+                    transform.position=Vector2.MoveTowards(transform.position,item.pos,state.shipSpeed*Time.deltaTime);
+                    yield return null;
+                }
+
+                if (item.Randomove)
+                {
+                    // 執行原地亂動，直到時間結束
+                    yield return StartCoroutine(RandomMoveRoutine(item.waitTime, item.pos));
+                }
+                else
+                {
+                    //不動
+                    yield return new WaitForSeconds(item.waitTime);
+                }
             }
-            /* 輸入-1則永久停止，但反正WayPoints跑完了也就停了。暫時保留，確定沒用可刪
-            if (item.waitTime == -1)
-            {
-                Debug.Log("-1 encounter, stop at "+transform.position);
-                yield break; // 強制跳出協程
-            }
-            */
-            if (item.Randomove)
-            {
-                // 執行原地亂動，直到時間結束
-                yield return StartCoroutine(RandomMoveRoutine(item.waitTime, item.pos));
-            }
-            else
-            {
-                //不動
-                yield return new WaitForSeconds(item.waitTime);
-            }
-        }
+        } while (Loop);
     }
     // 亂動協程
     IEnumerator RandomMoveRoutine(float duration, Vector2 centerPos)

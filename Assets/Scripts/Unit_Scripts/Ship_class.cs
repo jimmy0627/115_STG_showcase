@@ -1,12 +1,12 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using DG.Tweening;
+using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
+using Image = UnityEngine.UI.Image;
 public class Ship_class : MonoBehaviour
 {
     [SerializeField]
@@ -23,6 +23,7 @@ public class Ship_class : MonoBehaviour
     public float weaponCD; //攻擊冷卻
     [SerializeField]
     public int shipSpeed; //移動速度
+    public float rotationSpeed = 10f; //偏轉速度
     [SerializeField]
     public int bulletSpeed; //子彈速度
     [SerializeField]
@@ -70,11 +71,15 @@ public class Ship_class : MonoBehaviour
     }
     public void Hit(int amount) //受傷
     {
+        SpriteRenderer temp=transform.Find("Image").GetComponent<SpriteRenderer>();
+        temp.DOColor(new Color(251,183,183),0.05f).SetLoops(2,LoopType.Yoyo).SetLink(gameObject);
+        transform.DOShakePosition(0.1f, 0.1f).SetLink(gameObject);
         HP -= amount;
         if (HP <= 0 && IFF !=0)
         {
             //敵人死亡時，加分數並刪除單位
             Destroy(gameObject);
+            GetComponent<Drop_items>().DropLoot();
             AddScore(shipType,ScoreBorad); 
         }
         else if(HP <= 0 && IFF ==0)
@@ -85,6 +90,7 @@ public class Ship_class : MonoBehaviour
             ScoreBorad.GetComponent<TextMeshProUGUI>().text=0.ToString();
             SceneManager.LoadScene("Settlement_scene");
         }
+
     }
     public void IncreaseAttackspeed(float amount)
     {
