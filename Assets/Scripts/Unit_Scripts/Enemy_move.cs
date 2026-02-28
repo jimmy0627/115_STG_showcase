@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy_move : MonoBehaviour
 {
     [System.Serializable]
-    public class Waypoint
+    public class Waypoint //路徑點的class
     {
         public float waitTime; //在這個WayPoint停留的時間
         public Vector2 pos; //WayPoint座標
@@ -20,33 +20,61 @@ public class Enemy_move : MonoBehaviour
     void Awake()
     {
         state=GetComponent<Ship_class>();
+        // Movement is started explicitly via StartFollowing() to allow the manager
+        // to assign waypoints before movement begins.
+    }
+    // 被管理器設定時，Manager 會填好 Waypoints 後呼叫此方法
+    public void StartFollowing()
+    {
         if (Waypoints.Count > 0)
         {
             StartCoroutine(FlyFollowWayPoints());
         }
     }
+
+    // Manager 在授權路徑點時會設定此欄位為實際可移動的目標位置
+    [HideInInspector]
+    public Vector2 ReservedWaypointPos;
     IEnumerator FlyFollowWayPoints()
     {
         do
         {
             foreach (var item in Waypoints)
             {
-                while ((Vector2)transform.position != item.pos)
+                Vector2 targetPos = item.pos;
+
+                // 向 EnemyManager 申請保留該路徑點（若有管理器）
+                if (EnemyManager.Instance != null)
                 {
-                    //前往下一個目標點
-                    transform.position=Vector2.MoveTowards(transform.position,item.pos,state.shipSpeed*Time.deltaTime);
+                    // RequestReserve 會把最終可到達的位置放到 this.ReservedWaypointPos
+                    yield return StartCoroutine(EnemyManager.Instance.RequestReserve(item.pos, this));
+                    targetPos = this.ReservedWaypointPos;
+                }
+
+                // Use distance check (avoid exact-equality float compare)
+                float moveSpeed = (state != null && state.shipSpeed > 0) ? state.shipSpeed : 2f;
+                while (Vector2.Distance(transform.position, targetPos) > 0.01f)
+                {
+                    //前往下一個目標點（可能是 manager 指派的 reserved 位置）
+                    transform.position = Vector2.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
                     yield return null;
                 }
 
                 if (item.Randomove)
                 {
-                    // 執行原地亂動，直到時間結束
-                    yield return StartCoroutine(RandomMoveRoutine(item.waitTime, item.pos));
+                    // 執行原地亂動，直到時間結束；以 reserved 位置或原點為中心
+                    yield return StartCoroutine(RandomMoveRoutine(item.waitTime, targetPos));
                 }
                 else
                 {
                     //不動
                     yield return new WaitForSeconds(item.waitTime);
+                }
+
+                // 完成在此路徑點的停留後，釋放保留（若有管理器）
+                if (EnemyManager.Instance != null)
+                {
+                    EnemyManager.Instance.ReleaseWaypoint(item.pos, this);
                 }
             }
         } while (Loop);
@@ -55,7 +83,7 @@ public class Enemy_move : MonoBehaviour
     IEnumerator RandomMoveRoutine(float duration, Vector2 centerPos)
     {
         float timer = 0f;
-        float currentMoveSpeed = state.shipSpeed * 0.5f; 
+        float currentMoveSpeed = (state != null && state.shipSpeed > 0) ? state.shipSpeed * 0.5f : 1f;
 
         while (timer < duration)
         {

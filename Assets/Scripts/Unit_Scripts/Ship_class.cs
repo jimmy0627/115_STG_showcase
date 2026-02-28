@@ -72,8 +72,9 @@ public class Ship_class : MonoBehaviour
     public void Hit(int amount) //受傷
     {
         SpriteRenderer temp=transform.Find("Image").GetComponent<SpriteRenderer>();
-        temp.DOColor(new Color(251,183,183),0.05f).SetLoops(2,LoopType.Yoyo).SetLink(gameObject);
-        transform.DOShakePosition(0.1f, 0.1f).SetLink(gameObject);
+        temp.DOColor(new Color(251,183,183),0.05f).SetLoops(2,LoopType.Yoyo).SetLink(gameObject);//受擊後變色
+        transform.DOShakePosition(0.1f, 0.1f).SetLink(gameObject);//抖動一下
+
         HP -= amount;
         if (HP <= 0 && IFF !=0)
         {
