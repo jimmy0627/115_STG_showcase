@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         if (collision.CompareTag("item") || collision.CompareTag("Bullet")) return; //若碰撞到的是物品則跳過
         try
         {
-            enmeyShip=collision.transform.GetComponent<Ship_class>();
+            enmeyShip=collision.transform.GetComponentInParent<Ship_class>();
             if (enmeyShip.IFF!=myIFF) //若非我方船艦，造成傷害後刪除
             {
                 enmeyShip.Hit(damage);
