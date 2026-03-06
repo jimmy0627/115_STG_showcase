@@ -52,6 +52,7 @@ public class EnemyManager : MonoBehaviour
 
     [Header("Spawn Settings")]
     public GameObject enemyPrefab;     // 敵人預製體
+    public GameObject scoreBoard;      // 分數板物件（用於更新分數）
     public Transform[] spawnPoints;    // 敵人生成點陣列
     [Tooltip("Default number of enemies to spawn per spawn point when auto-spawning or when using SpawnFromAllPoints")]
     public int spawnCountPerPoint = 1;
@@ -152,7 +153,8 @@ public class EnemyManager : MonoBehaviour
         {
             Vector2 spawnPos = position;
 
-            GameObject go = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            GameObject go = Instantiate(enemyPrefab, spawnPos, Quaternion.Euler(0, 0, 180));
+            go.GetComponent<Ship_class>().scoreBorad = scoreBoard; // assign score board reference to the enemy's Ship_class
             Enemy_move em = go.GetComponent<Enemy_move>();
             if (em == null)
             {

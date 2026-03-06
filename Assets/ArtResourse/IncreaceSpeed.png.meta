@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 7f115a56964ae934dbb64f317ca7448f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6111526099810979376
+    second: IncreaceSpeed_0
+  - first:
+      213: 2302183254142617315
+    second: IncreaceSpeed_1
+  - first:
+      213: 5409694186718923162
+    second: IncreaceSpeed_2
+  - first:
+      213: -8928556683296789445
+    second: IncreaceSpeed_3
+  - first:
+      213: -9086258441941049667
+    second: IncreaceSpeed_4
+  - first:
+      213: -222005918823432367
+    second: IncreaceSpeed_5
+  - first:
+      213: 5588828304617621450
+    second: IncreaceSpeed_6
+  - first:
+      213: 7857138503585866719
+    second: IncreaceSpeed_7
+  - first:
+      213: 5764562954079522097
+    second: IncreaceSpeed_8
+  - first:
+      213: 1505520821084127354
+    second: IncreaceSpeed_9
+  - first:
+      213: 6521180894934619298
+    second: IncreaceSpeed_10
+  - first:
+      213: -3278384793979864564
+    second: IncreaceSpeed_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IncreaceSpeed_0
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 895
+        width: 76
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1fc39746f7f2ba0800000000000000
+      internalID: -6111526099810979376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_1
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 979
+        width: 72
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6060fd87ff2ff10800000000000000
+      internalID: 2302183254142617315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_2
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 819
+        width: 73
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9980e67338131b40800000000000000
+      internalID: 5409694186718923162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_3
+      rect:
+        serializedVersion: 2
+        x: 1153
+        y: 779
+        width: 137
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3ca7278005671480800000000000000
+      internalID: -8928556683296789445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_4
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 500
+        width: 176
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe95be861027e180800000000000000
+      internalID: -9086258441941049667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_5
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 618
+        width: 144
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15fbe760bc64becf0800000000000000
+      internalID: -222005918823432367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_6
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 469
+        width: 139
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7c16f6bb18f8d40800000000000000
+      internalID: 5588828304617621450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_7
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 295
+        width: 127
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3a74117d92a0d60800000000000000
+      internalID: 7857138503585866719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_8
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 437
+        width: 120
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d494bf677dfff40800000000000000
+      internalID: 5764562954079522097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_9
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 291
+        width: 187
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a708caec53fa4e410800000000000000
+      internalID: 1505520821084127354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_10
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 164
+        width: 122
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a454a62973ef7a50800000000000000
+      internalID: 6521180894934619298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IncreaceSpeed_11
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 99
+        width: 179
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ab9c54666d082d0800000000000000
+      internalID: -3278384793979864564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      IncreaceSpeed_0: -6111526099810979376
+      IncreaceSpeed_1: 2302183254142617315
+      IncreaceSpeed_10: 6521180894934619298
+      IncreaceSpeed_11: -3278384793979864564
+      IncreaceSpeed_2: 5409694186718923162
+      IncreaceSpeed_3: -8928556683296789445
+      IncreaceSpeed_4: -9086258441941049667
+      IncreaceSpeed_5: -222005918823432367
+      IncreaceSpeed_6: 5588828304617621450
+      IncreaceSpeed_7: 7857138503585866719
+      IncreaceSpeed_8: 5764562954079522097
+      IncreaceSpeed_9: 1505520821084127354
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

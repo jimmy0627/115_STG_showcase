@@ -18,6 +18,7 @@ public class Shooting : MonoBehaviour
         clone.GetComponent<Bullet>().damage=state.ATK;
         clone.GetComponent<Bullet>().bulletSpeed=state.bulletSpeed;
         clone.GetComponent<Bullet>().myIFF=state.IFF;
+        clone.GetComponent<Bullet>().fireDirection=transform.up; //設定子彈的發射方向為當前物件的上方
     }
 
     IEnumerator attackRoutine()

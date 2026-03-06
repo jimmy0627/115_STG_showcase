@@ -32,7 +32,7 @@ public class Ship_class : MonoBehaviour
     public int IFF; //敵我標示(我為0,敵為1)
     [SerializeField]
     public GameObject bullet; //子彈的object
-    [SerializeField] private GameObject ScoreBorad; //分數板
+    public GameObject scoreBorad; //分數板
 
     [SerializeField] PlayAreaClamp playAreaClamp;
     [SerializeField] List<GameObject> Pylons = new List<GameObject>();//機槍的list
@@ -54,6 +54,8 @@ public class Ship_class : MonoBehaviour
     public void AddGunPair(int amount) //加彈幕
     {
         gunAmount += amount;
+        Debug.Log(gunAmount);
+        Debug.Log(amount);
         UpdateGunActive();
     }
     public void AddFunnel(int amount)//加浮游砲
@@ -81,14 +83,14 @@ public class Ship_class : MonoBehaviour
             //敵人死亡時，加分數並刪除單位
             Destroy(gameObject);
             GetComponent<Drop_items>().DropLoot();
-            AddScore(shipType,ScoreBorad); 
+            AddScore(shipType,scoreBorad); 
         }
         else if(HP <= 0 && IFF ==0)
         {
             //我方死亡時，暫存分數、重製分數板、進入結算場景
             Destroy(gameObject);
-            Temp_Store.Session_Score=int.Parse(ScoreBorad.GetComponent<TextMeshProUGUI>().text);
-            ScoreBorad.GetComponent<TextMeshProUGUI>().text=0.ToString();
+            Temp_Store.Session_Score=int.Parse(scoreBorad.GetComponent<TextMeshProUGUI>().text);
+            scoreBorad.GetComponent<TextMeshProUGUI>().text=0.ToString();
             SceneManager.LoadScene("Settlement_scene");
         }
 
@@ -102,7 +104,7 @@ public class Ship_class : MonoBehaviour
     {
         for (int i = 0; i < Pylons.Count; i++)
         {
-            Pylons[i].SetActive(i < gunAmount);
+            Pylons[i].SetActive(i < gunAmount-1); //gunAmount是彈幕數量，Pylons的index是從0開始，所以要-1
         }
     }
     public void UpdateFunnel()

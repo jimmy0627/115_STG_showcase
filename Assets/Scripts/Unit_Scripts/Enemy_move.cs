@@ -79,7 +79,7 @@ public class Enemy_move : MonoBehaviour
             }
         } while (Loop);
     }
-    // 亂動協程
+    # region 亂動協程
     IEnumerator RandomMoveRoutine(float duration, Vector2 centerPos)
     {
         float timer = 0f;
@@ -124,4 +124,5 @@ public class Enemy_move : MonoBehaviour
             timer += 0.2f;
         }
     }
+    #endregion
 }
