@@ -13,17 +13,20 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb; //子彈的剛體
     private Ship_class enmeyShip; //碰撞到的敵方艦船
 
-    void Start()
+    void Awake()
     {
         //設定變數
         rb=GetComponent<Rigidbody2D>();
-    }
 
+    }
     void Update()
     {
         rb.linearVelocityY=Math.Abs(bulletSpeed)*(fireDirection.y); //設定子彈的速度
         rb.linearVelocityX=Math.Abs(bulletSpeed)*(fireDirection.x);
+        float angle=Mathf.Atan2(rb.linearVelocityY,rb.linearVelocityX)*Mathf.Rad2Deg; //計算子彈的旋轉角度
+        transform.rotation=Quaternion.Euler(0,0,angle-90); //設定子彈的旋轉，使其面向發射方向
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("item") || collision.CompareTag("Bullet")) return; //若碰撞到的是物品則跳過

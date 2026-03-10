@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 7582025300704065855}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.011, y: 1.177, z: 0}
+  m_LocalPosition: {x: -0.06, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1590609067467597741}
   - component: {fileID: 5342947723342952131}
   - component: {fileID: 8478180771805547113}
-  - component: {fileID: 6047798773479799664}
+  - component: {fileID: 9094896772222749065}
   m_Layer: 0
   m_Name: Fly
   m_TagString: Untagged
@@ -232,7 +232,7 @@ MonoBehaviour:
   RandomMoveRange: 0.5
   RandomMoveFreq: 1
   ReservedWaypointPos: {x: 0, y: 0}
---- !u!60 &6047798773479799664
+--- !u!60 &9094896772222749065
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -278,9 +278,17 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.0030739307, y: 1.4609249}
-      - {x: -0.4966138, y: -0.27867067}
-      - {x: 0.51454693, y: -0.28242767}
+    - - {x: -0.071542665, y: 0.77695525}
+      - {x: -0.353465, y: 0.3384757}
+      - {x: -0.18442371, y: 0.35700104}
+      - {x: -0.5402534, y: -0.12393591}
+      - {x: -0.5464526, y: -0.2104155}
+      - {x: 0.20760083, y: -0.13146591}
+      - {x: -0.009806275, y: -0.7500994}
+      - {x: 0.5488832, y: -0.005845368}
+      - {x: -0.20663893, y: 0.016617067}
+      - {x: -0.048350662, y: 0.33380476}
+      - {x: 0.2398383, y: 0.3553094}
   m_UseDelaunayMesh: 0
 --- !u!1 &8022171184702073709
 GameObject:
@@ -307,13 +315,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8022171184702073709}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.010317415, y: 0.29799986, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1577868682657399521}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &6187378524693128169
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -361,8 +369,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.8490566, g: 0.108134575, b: 0.108134575, a: 1}
+  m_Sprite: {fileID: -427066485589525634, guid: e15c2e43e3c8f1e459c74f41faeb88e7, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -39,8 +39,16 @@ public class Ship_class : MonoBehaviour
     [SerializeField] Transform funnelRoot;//浮游砲要放的父物件
     [SerializeField] GameObject funnelPrefab;//浮游砲的prefab
     int[] Scores=new int[]{0,100,500,1000}; //擊毀艦船的分數，依照ShipType排序
-
+    private SpriteRenderer shipRenderer; //受傷閃紅用的暫存變數
+    
     List<Transform> funnels = new List<Transform>();//浮游砲的list
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
+    void Awake()
+    {
+        shipRenderer=transform.Find("Image").GetComponent<SpriteRenderer>();
+    }
 
     public void RepairShip(int amount) //回血
     {
@@ -73,9 +81,12 @@ public class Ship_class : MonoBehaviour
     }
     public void Hit(int amount) //受傷
     {
-        SpriteRenderer temp=transform.Find("Image").GetComponent<SpriteRenderer>();
-        temp.DOColor(new Color(251,183,183),0.05f).SetLoops(2,LoopType.Yoyo).SetLink(gameObject);//受擊後變色
-        transform.DOShakePosition(0.1f, 0.1f).SetLink(gameObject);//抖動一下
+        shipRenderer.DOKill();
+        transform.DOKill();
+        shipRenderer.color = Color.white; 
+
+        shipRenderer.DOColor(new Color32(251, 183, 183, 255), 0.05f).SetLoops(2, LoopType.Yoyo).SetLink(gameObject);
+        transform.DOShakePosition(0.1f, 0.1f).SetLink(gameObject);
 
         HP -= amount;
         if (HP <= 0 && IFF !=0)

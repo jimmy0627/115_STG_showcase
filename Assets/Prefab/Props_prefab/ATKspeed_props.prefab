@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7134008762920873982}
   - component: {fileID: 3885028079179432716}
   - component: {fileID: 2502670343157816604}
-  - component: {fileID: 4610713595720867718}
   - component: {fileID: 5397877209536353157}
+  - component: {fileID: 5445920984130164172}
   m_Layer: 0
   m_Name: ATKspeed_props
   m_TagString: item
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.27296364, y: 1.2714952, z: 0}
-  m_LocalScale: {x: 0.4783, y: 0.4783, z: 0.4783}
+  m_LocalScale: {x: 0.07280514, y: 0.07280514, z: 0.07280514}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -6111526099810979376, guid: 7f115a56964ae934dbb64f317ca7448f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,8 +120,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &4610713595720867718
-CircleCollider2D:
+--- !u!114 &5397877209536353157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983000396341469130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e707836dc625043b94383c6059a7a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Increase_Attackspeed
+  incraseAmount: 10
+--- !u!61 &5445920984130164172
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -155,17 +168,14 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
---- !u!114 &5397877209536353157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 983000396341469130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e707836dc625043b94383c6059a7a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Increase_Attackspeed
-  incraseAmount: 10
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.85, y: 9.78}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 9.85, y: 9.78}
+  m_EdgeRadius: 0
