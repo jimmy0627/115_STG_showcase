@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public int damage; //該子彈的傷害
     public int myIFF; //我方敵我識別代碼
     public int bulletSpeed=0;
+    public Vector2 fireDirection; //子彈的發射方向
     private Rigidbody2D rb; //子彈的剛體
     private Ship_class enmeyShip; //碰撞到的敵方艦船
 
@@ -20,8 +21,8 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        int factor= (int)Math.Pow(-1,myIFF);
-        rb.linearVelocityY=Math.Abs(bulletSpeed)*factor; //若是我方船則向上，敵方向下
+        rb.linearVelocityY=Math.Abs(bulletSpeed)*(fireDirection.y); //設定子彈的速度
+        rb.linearVelocityX=Math.Abs(bulletSpeed)*(fireDirection.x);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

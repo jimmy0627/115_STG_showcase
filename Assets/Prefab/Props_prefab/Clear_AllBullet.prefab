@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2919448576843441111, guid: 3ebeadce6499bcd4981db087b23220a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -168,4 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d153ba1ee1fb4d9438af906c683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Clear_AllBullet
-  incraseAmount: 0
+  clearTime: 0
