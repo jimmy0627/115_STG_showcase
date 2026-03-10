@@ -89,19 +89,20 @@ public class Ship_class : MonoBehaviour
         transform.DOShakePosition(0.1f, 0.1f).SetLink(gameObject);
 
         HP -= amount;
-        if (HP <= 0 && IFF !=0)
+    
+        if (HP <= 0 && IFF != 0)
         {
             //敵人死亡時，加分數並刪除單位
             Destroy(gameObject);
             GetComponent<Drop_items>().DropLoot();
-            AddScore(shipType,scoreBorad); 
+            AddScore(shipType, ScoreBorad);
         }
-        else if(HP <= 0 && IFF ==0)
+        else if (HP <= 0 && IFF == 0)
         {
             //我方死亡時，暫存分數、重製分數板、進入結算場景
             Destroy(gameObject);
-            Temp_Store.Session_Score=int.Parse(scoreBorad.GetComponent<TextMeshProUGUI>().text);
-            scoreBorad.GetComponent<TextMeshProUGUI>().text=0.ToString();
+            Temp_Store.Session_Score = int.Parse(ScoreBorad.GetComponent<TextMeshProUGUI>().text);
+            ScoreBorad.GetComponent<TextMeshProUGUI>().text = 0.ToString();
             SceneManager.LoadScene("Settlement_scene");
         }
 
