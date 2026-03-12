@@ -32,7 +32,7 @@ public class Ship_class : MonoBehaviour
     public int IFF; //敵我標示(我為0,敵為1)
     [SerializeField]
     public GameObject bullet; //子彈的object
-    public GameObject scoreBorad; //分數板
+    public GameObject ScoreBorad; //分數板
 
     [SerializeField] PlayAreaClamp playAreaClamp;
     [SerializeField] List<GameObject> Pylons = new List<GameObject>();//機槍的list

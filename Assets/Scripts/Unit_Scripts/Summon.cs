@@ -6,10 +6,11 @@ public class Summon : MonoBehaviour
     public int spawnTieme; //生成時間
     void Awake()
     {
+        spawner.GetComponent<EnemyManager>().SpawnFromAllPoints();
         InvokeRepeating("Spawn", spawnTieme, spawnTieme); //每隔spawnTime秒調用Spawn方法
     }
     void Spawn()
     {
-        spawner.GetComponent<EnemyManager>().SpawnFromAllPoints(4); //從生成點生成4個敵人
+        spawner.GetComponent<EnemyManager>().SpawnFromAllPoints();
     }
 }

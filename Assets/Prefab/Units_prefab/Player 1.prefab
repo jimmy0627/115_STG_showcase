@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 1256201072524281765}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.00037553255, w: 1}
-  m_LocalPosition: {x: -0.01, y: 0.335, z: 0}
-  m_LocalScale: {x: 0.11134298, y: 0.11134298, z: 0.11134298}
+  m_LocalPosition: {x: 0, y: 0.335, z: 0}
+  m_LocalScale: {x: 0.08884057, y: 0.11134298, z: 0.11134298}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6739329420198484682}
@@ -382,7 +382,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8866867313841120822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +408,7 @@ MonoBehaviour:
   shipType: 0
   IFF: 0
   bullet: {fileID: 3079568485362445983, guid: 6082e8c3311d3fe46bd28d46c31b971b, type: 3}
-  scoreBorad: {fileID: 0}
+  ScoreBorad: {fileID: 0}
   playAreaClamp: {fileID: 2839104045939929306}
   Pylons:
   - {fileID: 8682774279686813430}
@@ -540,11 +540,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.6746581, y: 0.09944391}
+    - - {x: 0.5469657, y: 0.01616621}
       - {x: 0.0062597096, y: 0.76526}
-      - {x: -0.68649346, y: 0.10390833}
-      - {x: -0.6879409, y: -0.09227836}
-      - {x: 0.67399126, y: -0.08127856}
+      - {x: -0.52548987, y: 0.053941995}
+      - {x: -0.52693754, y: -0.1533488}
+      - {x: 0.5462987, y: -0.15345216}
   m_UseDelaunayMesh: 0
 --- !u!1 &8423189756731818986
 GameObject:

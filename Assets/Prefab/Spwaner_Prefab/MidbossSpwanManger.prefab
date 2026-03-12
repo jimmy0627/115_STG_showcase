@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1986113957783342096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6310635864972394720}
+  - component: {fileID: 6183083639356539114}
+  m_Layer: 0
+  m_Name: MidbossSpwanManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6310635864972394720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986113957783342096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.33864, y: 2.55744, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6183083639356539114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986113957783342096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c4a60511512b429f6a4a6c30972b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
+  enemyPrefab: {fileID: 1524563714012642185, guid: a71d9416441334fa4bb520a923e76324, type: 3}
+  scoreBoard: {fileID: 0}
+  spawnPoints:
+  - {fileID: 0}
+  spawnCountPerPoint: 2
+  spawnInterval: 1
+  slotspace: -3
+  debugSpawn: 0
+  pathPoints:
+  - WayPointTransform: {fileID: 0}
+    waitTime: 0
+    Randomove: 0
+    radius: 0
+    maxOccupants: 1
+  - WayPointTransform: {fileID: 0}
+    waitTime: 100000
+    Randomove: 0
+    radius: 0.1
+    maxOccupants: 1
+  defaultWaitTime: 0
+  defaultLoop: 0
+  nodeRadius: 0.5

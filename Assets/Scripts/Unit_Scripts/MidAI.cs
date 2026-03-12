@@ -11,12 +11,21 @@ public class MidAI : MonoBehaviour
     private bool phase2Triggered = false;
 
     // 假設這是你原本控制射擊的參數
-    public float phase1FireRate = 2.0f;
-    public float phase2FireRate = 0.5f; // 進入第二階段射速變快
+    private float phase1FireRate ;
+    private float phase2FireRate ;
+    private int phase1DMG;
+    private int phase2DMG;
 
     void Start()
     {
+        //第一階段射速就是原本的射速,第二階段射速是第一階段的4倍
+        // 第一階段傷害就是原本的攻擊力,第二階段傷害是第一階段的2倍
         shipData = GetComponent<Ship_class>();
+        phase1FireRate = shipData.weaponCD; 
+        phase2FireRate = shipData.weaponCD * 0.25f; 
+        phase1DMG = shipData.ATK; 
+        phase2DMG = shipData.ATK * 2; 
+
     }
 
     void Update()
@@ -24,19 +33,9 @@ public class MidAI : MonoBehaviour
         // 每幀檢查血量百分比
         float healthPercent = (float)shipData.HP / shipData.MaxHP;
 
-        if (healthPercent <= 0.5f && !phase2Triggered)
+        if (healthPercent <= 0.5f)
         {
             EnterPhaseTwo();
-        }
-
-        // 根據不同階段執行不同行為
-        if (currentPhase == EnemyPhase.Phase2)
-        {
-            ExecutePhase2Attack();
-        }
-        else
-        {
-            ExecutePhase1Attack();
         }
     }
 
@@ -44,20 +43,14 @@ public class MidAI : MonoBehaviour
     {
         phase2Triggered = true;
         currentPhase = EnemyPhase.Phase2;
-
-        // 可以在這裡加一些特效
-        Debug.Log("警告：怪物進入第二階段！");
         enemyMainSprite.color = Color.red; // 變紅表示生氣
+        ExecutePhase2Attack(); // 立即執行第二階段攻擊，讓玩家感受到變化
     }
 
-    void ExecutePhase1Attack()
-    {
-
-    }
 
     void ExecutePhase2Attack()
     {
         shipData.AddGunPair(2);
-        shipData.ATK = 20;
+        shipData.ATK = phase2DMG;
     }
 }

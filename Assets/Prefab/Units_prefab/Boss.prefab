@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 818546389171438128}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,7 +238,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3767228159808474577}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.02, y: 3.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -256,7 +256,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3767228159808474577}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -274,7 +274,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7984389459832021732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8eea29ad8787648a406ee8b8654277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
-  MaxHP: 500
-  HP: 500
+  MaxHP: 10000
+  HP: 10000
   ATK: 1
   gunAmount: 3
   funnelAmount: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   shipType: 3
   IFF: 1
   bullet: {fileID: 3079568485362445983, guid: 6082e8c3311d3fe46bd28d46c31b971b, type: 3}
-  scoreBorad: {fileID: 0}
+  ScoreBorad: {fileID: 0}
   playAreaClamp: {fileID: 0}
   Pylons: []
   funnelRoot: {fileID: 0}
@@ -389,11 +389,14 @@ MonoBehaviour:
     itemPrefab: {fileID: 8548058052319320649, guid: 659a1f47ea7f3a945836768f81070abf, type: 3}
     weight: 30
   - name: 
-    itemPrefab: {fileID: 8548058052319320649, guid: 659a1f47ea7f3a945836768f81070abf, type: 3}
+    itemPrefab: {fileID: 983000396341469130, guid: 483c89f37d52b9d4bb9909bbd2115b96, type: 3}
     weight: 10
   - name: 
     itemPrefab: {fileID: 7266374354222046312, guid: 2f42b66b460401646a3b6188db9e35f0, type: 3}
     weight: 10
+  - name: 
+    itemPrefab: {fileID: 1193200552965944153, guid: e6fa45b3fb4f2d940866b996b95d5782, type: 3}
+    weight: 20
 --- !u!114 &818546389171438128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,8 +409,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e89c7b18d7ecd540a6651742bd36919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  spawner: {fileID: 0}
-  spawnTieme: 60
+  spawner: {fileID: 3384033265095387252, guid: 6e3cde2e7fd0dd24b9fca74317c19cf9, type: 3}
+  spawnTieme: 10
 --- !u!1 &4121588008961707931
 GameObject:
   m_ObjectHideFlags: 0

@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 9094896772222749065}
   m_Layer: 0
   m_Name: Fly
-  m_TagString: Untagged
+  m_TagString: Fly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +122,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7612123755434036263}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1590609067467597741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   shipType: 1
   IFF: 1
   bullet: {fileID: 3079568485362445983, guid: 6082e8c3311d3fe46bd28d46c31b971b, type: 3}
-  scoreBorad: {fileID: 0}
+  ScoreBorad: {fileID: 0}
   playAreaClamp: {fileID: 0}
   Pylons: []
   funnelRoot: {fileID: 0}
@@ -183,13 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a857b17c4bceb34b89e03f97b2fff7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drop_items
-  dropChance: 50
+  dropChance: 25
   lootTable:
   - name: 
     itemPrefab: {fileID: 983000396341469130, guid: 483c89f37d52b9d4bb9909bbd2115b96, type: 3}
     weight: 30
   - name: 
-    itemPrefab: {fileID: 7305980007693016964, guid: 2342061687ae6e543ab5a138d705f1c1, type: 3}
+    itemPrefab: {fileID: 1193200552965944153, guid: e6fa45b3fb4f2d940866b996b95d5782, type: 3}
     weight: 30
   - name: 
     itemPrefab: {fileID: 3673273741914605460, guid: 1dd6e1f89b6804b15834a9cb023df93d, type: 3}

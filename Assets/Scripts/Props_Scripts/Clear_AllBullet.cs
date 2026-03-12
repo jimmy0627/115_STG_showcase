@@ -19,7 +19,7 @@ public class Clear_AllBullet : MonoBehaviour
         try
         {
             Ship_class state=collision.transform.GetComponent<Ship_class>(); //若為船艦且為我方船隻
-            StartCoroutine(ClearBulletsRoutine());
+            if (state != null && state.IFF == 0) StartCoroutine(ClearBulletsRoutine());
         }
         catch (System.NullReferenceException) //撞牆
         {

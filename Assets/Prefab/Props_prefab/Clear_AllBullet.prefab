@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269d153ba1ee1fb4d9438af906c683e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Clear_AllBullet
-  clearTime: 0
+  clearTime: 10
 --- !u!61 &712060107353105402
 BoxCollider2D:
   m_ObjectHideFlags: 0
