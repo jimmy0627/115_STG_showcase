@@ -947,6 +947,7 @@ MonoBehaviour:
   BossSpawnner: {fileID: 267715678}
   isPlayerAlive: 1
   checkInterval: 3
+  bossSpawnDelay: 60
 --- !u!4 &884157052
 Transform:
   m_ObjectHideFlags: 0
@@ -2583,7 +2584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8866867313841120822, guid: c636ccf457dd722409a2cfb3e15c3654, type: 3}
       propertyPath: HP
-      value: 200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8866867313841120822, guid: c636ccf457dd722409a2cfb3e15c3654, type: 3}
       propertyPath: ATK
@@ -2591,7 +2592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8866867313841120822, guid: c636ccf457dd722409a2cfb3e15c3654, type: 3}
       propertyPath: MaxHP
-      value: 200
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8866867313841120822, guid: c636ccf457dd722409a2cfb3e15c3654, type: 3}
+      propertyPath: weaponCD
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8866867313841120822, guid: c636ccf457dd722409a2cfb3e15c3654, type: 3}
       propertyPath: ScoreBorad

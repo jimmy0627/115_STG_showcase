@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
   MaxHP: 1000
   HP: 1000
-  ATK: 15
+  ATK: 12
   gunAmount: 1
   funnelAmount: 0
   radius: 5
@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a857b17c4bceb34b89e03f97b2fff7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drop_items
-  dropChance: 50
+  dropChance: 72
   lootTable:
   - name: 
     itemPrefab: {fileID: 983000396341469130, guid: 483c89f37d52b9d4bb9909bbd2115b96, type: 3}
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128223715162434176, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7128223715162434176, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128223715162434176, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7128223715162434176, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
       propertyPath: m_LocalPosition.y

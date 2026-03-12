@@ -22,7 +22,7 @@ public class MidAI : MonoBehaviour
         // 第一階段傷害就是原本的攻擊力,第二階段傷害是第一階段的2倍
         shipData = GetComponent<Ship_class>();
         phase1FireRate = shipData.weaponCD; 
-        phase2FireRate = shipData.weaponCD * 0.25f; 
+        phase2FireRate = shipData.weaponCD * 1.2f; 
         phase1DMG = shipData.ATK; 
         phase2DMG = shipData.ATK * 2; 
 
@@ -33,7 +33,7 @@ public class MidAI : MonoBehaviour
         // 每幀檢查血量百分比
         float healthPercent = (float)shipData.HP / shipData.MaxHP;
 
-        if (healthPercent <= 0.5f)
+        if (healthPercent <= 0.25f)
         {
             EnterPhaseTwo();
         }
@@ -52,5 +52,6 @@ public class MidAI : MonoBehaviour
     {
         shipData.AddGunPair(2);
         shipData.ATK = phase2DMG;
+        shipData.weaponCD = phase2FireRate;
     }
 }
