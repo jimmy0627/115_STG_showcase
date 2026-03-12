@@ -208,6 +208,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b71d1f8ec354847aa5dc55c19d11e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooting
+--- !u!1 &3326128370678637251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5297613391856379948}
+  - component: {fileID: 5052908126563796150}
+  m_Layer: 0
+  m_Name: AutoScaler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5297613391856379948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326128370678637251}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.1036098, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2844670390123382909}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5052908126563796150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3326128370678637251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc571dacd93f54ddabb002fdb455faf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossScaler
 --- !u!1 &3767228159808474577
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +290,7 @@ Transform:
   - {fileID: 4614206681608794467}
   - {fileID: 8417454565283457793}
   - {fileID: 5052994346616783479}
+  - {fileID: 5297613391856379948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2920258122609987975
@@ -287,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8eea29ad8787648a406ee8b8654277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
-  MaxHP: 10000
-  HP: 10000
+  MaxHP: 5000
+  HP: 5000
   ATK: 1
   gunAmount: 3
   funnelAmount: 0
