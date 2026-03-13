@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using Microsoft.Unity.VisualStudio.Editor;
@@ -48,6 +49,7 @@ public class Ship_class : MonoBehaviour
     void Awake()
     {
         shipRenderer=transform.Find("Image").GetComponent<SpriteRenderer>();
+        StartCoroutine(attackRoutine());
     }
 
     public void RepairShip(int amount) //回血
@@ -62,8 +64,6 @@ public class Ship_class : MonoBehaviour
     public void AddGunPair(int amount) //加彈幕
     {
         gunAmount += amount;
-        Debug.Log(gunAmount);
-        Debug.Log(amount);
         UpdateGunActive();
     }
     public void AddFunnel(int amount)//加浮游砲
@@ -112,11 +112,11 @@ public class Ship_class : MonoBehaviour
         float temp=weaponCD;
         weaponCD -= temp*(amount/100);
     }
-    public void UpdateGunActive()//
+    public void UpdateGunActive()
     {
         for (int i = 0; i < Pylons.Count; i++)
         {
-            Pylons[i].SetActive(i < gunAmount-1); //gunAmount是彈幕數量，Pylons的index是從0開始，所以要-1
+            Pylons[i].SetActive(i < gunAmount); 
         }
     }
     public void UpdateFunnel()
@@ -151,6 +151,17 @@ public class Ship_class : MonoBehaviour
         else
         {
             GetComponent<Mange_scenes>().Change_Scenes("Settlement_scene");
+        }
+    }
+    public IEnumerator attackRoutine()
+    {
+        while (true)
+        {
+            for (int i = 0; i < gunAmount; i++)
+            {
+                Pylons[i].GetComponent<Shooting>().Fire(gameObject);
+            }
+            yield return new WaitForSeconds(weaponCD);
         }
     }
 }

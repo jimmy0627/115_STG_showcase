@@ -8,11 +8,11 @@ public class MidAI : MonoBehaviour
     public SpriteRenderer enemyMainSprite; // 在 Inspector 裡把子物件拖進來
     public EnemyPhase currentPhase = EnemyPhase.Phase1;
     private Ship_class shipData;
-    private bool phase2Triggered = false;
 
     // 假設這是你原本控制射擊的參數
     private float phase1FireRate ;
     private float phase2FireRate ;
+    private bool phase2Flag; // 確保只進入一次第二階段
     private int phase1DMG;
     private int phase2DMG;
 
@@ -23,6 +23,7 @@ public class MidAI : MonoBehaviour
         shipData = GetComponent<Ship_class>();
         phase1FireRate = shipData.weaponCD; 
         phase2FireRate = shipData.weaponCD * 0.25f; 
+        phase2Flag = false;
         phase1DMG = shipData.ATK; 
         phase2DMG = shipData.ATK * 2; 
 
@@ -41,10 +42,13 @@ public class MidAI : MonoBehaviour
 
     void EnterPhaseTwo()
     {
-        phase2Triggered = true;
         currentPhase = EnemyPhase.Phase2;
         enemyMainSprite.color = Color.red; // 變紅表示生氣
-        ExecutePhase2Attack(); // 立即執行第二階段攻擊，讓玩家感受到變化
+        if (!phase2Flag)
+        {
+            phase2Flag = true;
+            ExecutePhase2Attack(); // 立即執行第二階段攻擊，讓玩家感受到變化
+        }
     }
 
 

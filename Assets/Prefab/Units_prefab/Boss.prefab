@@ -290,7 +290,7 @@ MonoBehaviour:
   MaxHP: 10000
   HP: 10000
   ATK: 1
-  gunAmount: 3
+  gunAmount: 4
   funnelAmount: 0
   radius: 5
   weaponCD: 0.1
@@ -302,7 +302,11 @@ MonoBehaviour:
   bullet: {fileID: 3079568485362445983, guid: 6082e8c3311d3fe46bd28d46c31b971b, type: 3}
   ScoreBorad: {fileID: 0}
   playAreaClamp: {fileID: 0}
-  Pylons: []
+  Pylons:
+  - {fileID: 4995941306034467531}
+  - {fileID: 8289244163695118365}
+  - {fileID: 3062324681167337933}
+  - {fileID: 1030230457315590175}
   funnelRoot: {fileID: 0}
   funnelPrefab: {fileID: 0}
 --- !u!114 &5346271252852864129

@@ -168,7 +168,8 @@ MonoBehaviour:
   bullet: {fileID: 3079568485362445983, guid: 6082e8c3311d3fe46bd28d46c31b971b, type: 3}
   ScoreBorad: {fileID: 0}
   playAreaClamp: {fileID: 0}
-  Pylons: []
+  Pylons:
+  - {fileID: 7582025300704065855}
   funnelRoot: {fileID: 0}
   funnelPrefab: {fileID: 1731893774995540163, guid: d7264714621a4cd4b961472e63d09148, type: 3}
 --- !u!114 &5342947723342952131

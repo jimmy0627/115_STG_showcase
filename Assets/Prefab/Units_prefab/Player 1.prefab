@@ -411,6 +411,7 @@ MonoBehaviour:
   ScoreBorad: {fileID: 0}
   playAreaClamp: {fileID: 2839104045939929306}
   Pylons:
+  - {fileID: 299510383770300328}
   - {fileID: 8682774279686813430}
   - {fileID: 8795552584091785836}
   - {fileID: 8286541108564083588}
@@ -854,6 +855,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
+--- !u!1 &299510383770300328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3731452392343990253, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
+  m_PrefabInstance: {fileID: 4026459088267935813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6128363931093117637 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7128223715162434176, guid: 6dd1861c3816146b8b8cd6832ca0f2f1, type: 3}
