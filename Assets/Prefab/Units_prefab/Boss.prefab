@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8eea29ad8787648a406ee8b8654277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
-  MaxHP: 10000
-  HP: 10000
+  MaxHP: 5000
+  HP: 5000
   ATK: 1
   gunAmount: 4
   funnelAmount: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
     weight: 50
   - name: 
     itemPrefab: {fileID: 8548058052319320649, guid: 659a1f47ea7f3a945836768f81070abf, type: 3}
-    weight: 30
+    weight: 40
   - name: 
     itemPrefab: {fileID: 983000396341469130, guid: 483c89f37d52b9d4bb9909bbd2115b96, type: 3}
     weight: 10
@@ -400,7 +400,7 @@ MonoBehaviour:
     weight: 10
   - name: 
     itemPrefab: {fileID: 1193200552965944153, guid: e6fa45b3fb4f2d940866b996b95d5782, type: 3}
-    weight: 20
+    weight: 30
 --- !u!114 &818546389171438128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93eda339e3981de4eb51bf94d166c215, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  rotationSpeed: 180
+  rotationSpeed: 270
 --- !u!1 &7882261256143515377
 GameObject:
   m_ObjectHideFlags: 0

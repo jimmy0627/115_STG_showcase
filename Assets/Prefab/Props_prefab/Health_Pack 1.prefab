@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43be3ed95908c8e48b1f1a810c49b05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  recoverAmount: 30
+  recoverAmount: 35
 --- !u!50 &2811701267511144508
 Rigidbody2D:
   serializedVersion: 5

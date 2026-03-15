@@ -240,7 +240,7 @@ MonoBehaviour:
     weight: 30
   - name: 
     itemPrefab: {fileID: 8548058052319320649, guid: 659a1f47ea7f3a945836768f81070abf, type: 3}
-    weight: 10
+    weight: 5
   - name: 
     itemPrefab: {fileID: 3673273741914605460, guid: 1dd6e1f89b6804b15834a9cb023df93d, type: 3}
     weight: 10
@@ -249,7 +249,7 @@ MonoBehaviour:
     weight: 30
   - name: 
     itemPrefab: {fileID: 1193200552965944153, guid: e6fa45b3fb4f2d940866b996b95d5782, type: 3}
-    weight: 50
+    weight: 30
 --- !u!114 &4166660611146734922
 MonoBehaviour:
   m_ObjectHideFlags: 0

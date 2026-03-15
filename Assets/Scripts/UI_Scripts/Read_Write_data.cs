@@ -53,6 +53,25 @@ public class Read_Write_data
             return new Saved_data(); 
         }
     }
+    public void delete_json()
+    {
+        if (File.Exists(SavePath))
+        {
+            try
+            {
+                File.Delete(SavePath);
+                Debug.Log($"Delete complete: {SavePath}");
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log($"Delete fail: {e.Message}");
+            }
+        }
+        else
+        {
+            Debug.Log($"Delete fail: File not found at {SavePath}");
+        }
+    }
 }
     
 
