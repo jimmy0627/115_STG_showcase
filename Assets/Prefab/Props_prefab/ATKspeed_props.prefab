@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e707836dc625043b94383c6059a7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Increase_Attackspeed
-  incraseAmount: 50
+  incraseAmount: 20
 --- !u!61 &5445920984130164172
 BoxCollider2D:
   m_ObjectHideFlags: 0

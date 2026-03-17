@@ -74,6 +74,7 @@ public class Ship_class : MonoBehaviour
             //Instantiate這函數能管旋轉角度，我沒寫它，等於就是直接用物體本身的角度了
             //沒研究過Instantiate，到時候套上圖片如果要用角度再說
             funnels.Add(f.transform);
+            f.GetComponent<Funnel>().state=gameObject;
             funnelAmount++;
         }
 
