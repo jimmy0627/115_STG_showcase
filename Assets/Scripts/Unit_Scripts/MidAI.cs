@@ -56,5 +56,6 @@ public class MidAI : MonoBehaviour
     {
         shipData.AddGunPair(2);
         shipData.ATK = phase2DMG;
+        shipData.weaponCD = shipData.weaponCD * 1.5f; // 射速變慢
     }
 }

@@ -287,8 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8eea29ad8787648a406ee8b8654277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
-  MaxHP: 5000
-  HP: 5000
+  MaxHP: 2500
+  HP: 2500
   ATK: 1
   gunAmount: 4
   funnelAmount: 0

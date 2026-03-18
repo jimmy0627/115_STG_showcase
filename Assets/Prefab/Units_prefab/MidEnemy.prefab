@@ -208,8 +208,8 @@ MonoBehaviour:
   gunAmount: 1
   funnelAmount: 0
   radius: 5
-  weaponCD: 1
-  shipSpeed: 3
+  weaponCD: 1.5
+  shipSpeed: 2
   rotationSpeed: 10
   bulletSpeed: 10
   shipType: 2

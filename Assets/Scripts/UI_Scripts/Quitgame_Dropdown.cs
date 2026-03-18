@@ -13,6 +13,9 @@ public class Quitgame_Dropdown : MonoBehaviour
                 Application.Quit(); //退出遊戲
                 return;
             case 1:
+                Application.Quit(); //退出遊戲
+                return;
+            case 2:
                 manger.GetComponent<Mange_scenes>().Change_Scenes("Main_Scene"); //切換至主頁面
                 return;
         }

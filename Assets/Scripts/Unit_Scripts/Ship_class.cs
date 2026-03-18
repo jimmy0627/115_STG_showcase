@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine;
 using TMPro;
 using Unity.Mathematics;
-using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using Image = UnityEngine.UI.Image;
 public class Ship_class : MonoBehaviour
 {
     [SerializeField]
@@ -16,11 +13,13 @@ public class Ship_class : MonoBehaviour
     public int HP;      //現在的血量也就是傷害運算用這個
     [SerializeField]
     public int ATK; //攻擊力
+    [Header("彈幕數量、浮游砲數量、浮游砲半徑")]
     public int gunAmount = 1; //彈幕數量
     public int funnelAmount= 0; //浮游砲數量
     [SerializeField]
     public float radius = 5f;//浮游砲的半徑
     [SerializeField]
+    [Header("艦船的基本數值")]
     public float weaponCD; //攻擊冷卻
     [SerializeField]
     public int shipSpeed; //移動速度

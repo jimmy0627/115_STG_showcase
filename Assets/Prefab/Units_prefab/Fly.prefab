@@ -162,7 +162,7 @@ MonoBehaviour:
   weaponCD: 1
   shipSpeed: 3
   rotationSpeed: 10
-  bulletSpeed: 12
+  bulletSpeed: 4
   shipType: 1
   IFF: 1
   bullet: {fileID: 3079568485362445983, guid: 6082e8c3311d3fe46bd28d46c31b971b, type: 3}

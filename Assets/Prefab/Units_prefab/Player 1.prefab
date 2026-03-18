@@ -397,11 +397,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ship_class
   MaxHP: 100
   HP: 100
-  ATK: 50
+  ATK: 25
   gunAmount: 1
   funnelAmount: 0
   radius: 1.25
-  weaponCD: 1
+  weaponCD: 0.5
   shipSpeed: 5
   rotationSpeed: 5
   bulletSpeed: 12
